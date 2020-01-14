@@ -39,9 +39,10 @@ const updateUserSpuds = async(user, spuds) => {
 
 const getAllSpuds = async() => {
     try {
-        return scoreboard.find({}).toArray()
+        return await scoreboard.find().toArray()
     } catch (e) {
         console.error(e);
+        return null;
     }
 }
 

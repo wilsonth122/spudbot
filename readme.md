@@ -1,11 +1,37 @@
-# Botkit Starter Kit
+# Spudbot (BETA)
 
-This is a Botkit starter kit for slack, created with the [Yeoman generator](https://github.com/howdyai/botkit/tree/master/packages/generator-botkit#readme).
+The ultimate spud master.
 
-To complete the configuration of this bot, make sure to update the included `.env` file with your platform tokens and credentials.
+To add to slack:
+1. Go to https://api.slack.com/apps and "Create New App"
+2. Fill in some general info
+3. Add a bot user
+4. Activate Event Subscriptions and add <URL>/api/messages as Request URL
+5. Subscribe to the following events: 
+Event Name	Description
+message.channels
+A message was posted to a channel
 
-[Botkit Docs](https://botkit.ai/docs/v4)
+message.groups
+A message was posted to a private channel
 
-This bot is powered by [a folder full of modules](https://botkit.ai/docs/v4/core.html#organize-your-bot-code). 
-Edit the samples, and add your own in the [features/](features/) folder.
-# spudbot
+message.im
+A message was posted in a direct message channel
+
+message.mpim
+A message was posted in a multiparty direct message channel
+
+reaction_added
+A member has added an emoji reaction to an item
+
+reaction_removed
+A member removed an emoji reaction
+
+6. Create a MongoDB instance: https://cloud.mongodb.com/
+7. Update .env file
+8. Upload this code to AWS Elastic Beanstalk
+9. Go to your apps API endpoint to install: <URL>/install
+10. Should work
+
+
+This bot was created using [Botkit](https://botkit.ai/docs/v4)

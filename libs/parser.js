@@ -1,6 +1,6 @@
 const { compose, removeStr } = require("./utils.js")
 
-const ID_REGEX = /<@\S*>/
+const ID_REGEX = /<@\S*>/g
 const SPUD_REGEX = /:spud:/g
 
 const parseId = id =>
@@ -23,11 +23,9 @@ const findUserIDs = message => {
 };
 
 const parseUserHandles = ids => {
-  let userHandles = ids.map(
+  return ids.map(
     id => "<@" + id + ">"
   )
-
-  return userHandles
 }
 
 const findSpuds = message => message.match(SPUD_REGEX).length
